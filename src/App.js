@@ -13,14 +13,18 @@ export const App = () => {
   }, []);
 
   const fetchPresentList = async () => {
-    const data = await fetch("http://www.mocky.io/v2/5db69fb52f000058007fe8dc");
+    const data = await fetch(
+      "https://www.mocky.io/v2/5db69fb52f000058007fe8dc"
+    );
     const presentList = await data.json();
     setPresentList(presentList);
     console.log(presentList);
   };
 
   const fetchQuittingList = async () => {
-    const data = await fetch("http://www.mocky.io/v2/5db6a0342f000070007fe8e1");
+    const data = await fetch(
+      "https://www.mocky.io/v2/5db6a0342f000070007fe8e1"
+    );
     const quittingList = await data.json();
     setQuittingList(quittingList);
     console.log(quittingList);

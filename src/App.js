@@ -18,7 +18,6 @@ export const App = () => {
     );
     const presentList = await data.json();
     setPresentList(presentList);
-    console.log(presentList);
   };
 
   const fetchQuittingList = async () => {
@@ -27,10 +26,7 @@ export const App = () => {
     );
     const quittingList = await data.json();
     setQuittingList(quittingList);
-    console.log(quittingList);
   };
-
-  console.log(patient);
 
   return (
     <Wrapper>

@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { PatientInfo, Tabs } from "./components";
+import styled from "styled-components";
 
-function App() {
+export const App = () => {
+  const [presentList, setPresentList] = useState([]);
+  const [quittingList, setQuittingList] = useState([]);
+  const [patient, setPatient] = useState({});
+
+  useEffect(() => {
+    fetchPresentList();
+    fetchQuittingList();
+  }, []);
+
+  const fetchPresentList = async () => {
+    const data = await fetch("http://www.mocky.io/v2/5db69fb52f000058007fe8dc");
+    const presentList = await data.json();
+    setPresentList(presentList);
+    console.log(presentList);
+  };
+
+  const fetchQuittingList = async () => {
+    const data = await fetch("http://www.mocky.io/v2/5db6a0342f000070007fe8e1");
+    const quittingList = await data.json();
+    setQuittingList(quittingList);
+    console.log(quittingList);
+  };
+
+  console.log(patient);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <PatientInfo patient={patient}></PatientInfo>
+      <Tabs
+        setPatient={setPatient}
+        presentList={presentList}
+        quittingList={quittingList}
+        activePatientNumber={patient.historyNumber}
+      ></Tabs>
+    </Wrapper>
   );
-}
+};
 
-export default App;
+const Wrapper = styled.div`
+  display: flex;
+  padding: 1rem 0.4rem;
+  justify-content: space-between;
+`;

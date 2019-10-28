@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "caeb0b4c4766e2a04c177866418e3e05",
+    "revision": "dfd7f0d8c35c20519817cdabf6c2a967",
     "url": "/vista-test/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vista-test/static/js/2.e71c3fe0.chunk.js"
   },
   {
-    "revision": "f5b76ecf6f9318681ea6",
-    "url": "/vista-test/static/js/main.5080431b.chunk.js"
+    "revision": "43718c27ebcd1345b3cc",
+    "url": "/vista-test/static/js/main.ca2e1955.chunk.js"
   },
   {
     "revision": "88a3fbc12e4b65784d4c",
